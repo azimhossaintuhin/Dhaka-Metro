@@ -1,6 +1,6 @@
 # Dhaka Metro Rail Website
 
-![Dhaka Metro Rail](img/Metro-rail.png)
+![Dhaka Metro Rail](img/logo.png)
 
 A modern, responsive website for Dhaka's Metro Rail system that provides real-time updates, ticket booking, and journey planning features.
 
