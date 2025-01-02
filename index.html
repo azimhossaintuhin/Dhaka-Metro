@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhaka Metro Rail - Modern Transit Solution</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="img/logo.png" alt="Metro Logo" class="logo">
+            <span>Dhaka Metro</span>
+        </div>
+        <div class="nav-toggle" id="navToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="buy-ticket.html">Buy Ticket</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" class="account-btn">Dashboard</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Modern Transit for a Modern City</h1>
+                <p>Experience the future of urban transportation with Dhaka Metro Rail. Fast, safe, and eco-friendly.</p>
+                <div class="hero-buttons">
+                    <a href="buy-ticket.html" class="cta-button primary">Buy Tickets</a>
+                    <a href="#schedule" class="cta-button secondary">View Schedule</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Stations</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100K+</span>
+                        <span class="stat-label">Daily Passengers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">21.26</span>
+                        <span class="stat-label">KM Route</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="img/Metro-rail.png" alt="Modern Metro Train" class="metro-vector">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="quick-actions">
+            <div class="action-cards">
+                <div class="action-card">
+                    <i class="fas fa-ticket-alt"></i>
+                    <h3>Quick Ticket</h3>
+                    <p>Purchase single journey tickets</p>
+                    <a href="buy-ticket.html" class="card-link">Buy Now</a>
+                </div>
+                <div class="action-card">
+                    <i class="fas fa-route"></i>
+                    <h3>Plan Journey</h3>
+                    <p>Find the best route for your trip</p>
+                    <a href="journey-planner.html" class="card-link">Plan Now</a>
+                </div>
+                <div class="action-card">
+                    <i class="fas fa-credit-card"></i>
+                    <h3>Metro Card</h3>
+                    <p>Get your monthly pass card</p>
+                    <a href="metro-card.html" class="card-link">Learn More</a>
+                </div>
+                <div class="action-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Live Status</h3>
+                    <p>Check real-time train status</p>
+                    <a href="live-status.html" class="card-link">Check Now</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Why Choose Dhaka Metro?</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Time-Saving</h3>
+                    <p>Cut your travel time by up to 70% compared to road transport</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Eco-Friendly</h3>
+                    <p>100% electric trains reducing 2.5 million tons of CO2 annually</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-wallet"></i>
+                    <h3>Affordable</h3>
+                    <p>Competitive fares with special discounts for students and seniors</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Safe Travel</h3>
+                    <p>24/7 security with modern surveillance and emergency response</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="live-schedule" id="schedule">
+            <h2>Live Schedule Updates</h2>
+            <div class="schedule-container">
+                <div class="schedule-header">
+                    <div>Train ID</div>
+                    <div>From</div>
+                    <div>To</div>
+                    <div>Status</div>
+                    <div>Time</div>
+                </div>
+                <div class="schedule-row">
+                    <div>MRT-001</div>
+                    <div>Uttara North</div>
+                    <div>Motijheel</div>
+                    <div class="status on-time">On Time</div>
+                    <div>10:00 AM</div>
+                </div>
+                <div class="schedule-row">
+                    <div>MRT-002</div>
+                    <div>Motijheel</div>
+                    <div>Uttara North</div>
+                    <div class="status delayed">5 min late</div>
+                    <div>10:15 AM</div>
+                </div>
+                <div class="schedule-row">
+                    <div>MRT-003</div>
+                    <div>Uttara North</div>
+                    <div>Motijheel</div>
+                    <div class="status on-time">On Time</div>
+                    <div>10:30 AM</div>
+                </div>
+            </div>
+            <a href="schedule.html" class="view-all">View Full Schedule</a>
+        </section>
+
+        <section class="fare-calculator">
+            <h2>Fare Calculator</h2>
+            <div class="calculator-container">
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label>From Station</label>
+                        <select id="fromStation">
+                            <option>Uttara North</option>
+                            <option>Agargaon</option>
+                            <option>Farmgate</option>
+                            <option>Motijheel</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>To Station</label>
+                        <select id="toStation">
+                            <option>Motijheel</option>
+                            <option>Farmgate</option>
+                            <option>Agargaon</option>
+                            <option>Uttara North</option>
+                        </select>
+                    </div>
+                    <button class="calculate-btn">Calculate Fare</button>
+                </div>
+                <div class="fare-result">
+                    <h3>Estimated Fare</h3>
+                    <span class="fare-amount">৳ 100</span>
+                    <span class="journey-time">Estimated time: 25 mins</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="news-updates">
+            <h2>Latest Updates</h2>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="img/agargaon-station.jpg" alt="New Station">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-tag">New Station</span>
+                        <h3>Agargaon Station Now Open</h3>
+                        <p>The new Agargaon station is now operational, connecting thousands of daily commuters.</p>
+                        <span class="news-date">December 21, 2023</span>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="img/Digital Payment Integration.jpg" alt="Digital Payment">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-tag">Service Update</span>
+                        <h3>Digital Payment Integration</h3>
+                        <p>Now accepting all major digital payment methods including bKash, Nagad, and credit cards.</p>
+                        <span class="news-date">January 15, 2024</span>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="img/Enhanced Safety Measures.png" alt="Safety Measures">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-tag">Safety</span>
+                        <h3>Enhanced Safety Measures</h3>
+                        <p>New safety protocols and sanitization measures implemented across all stations.</p>
+                        <span class="news-date">February 1, 2024</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="schedule.html">Train Schedule</a></li>
+                    <li><a href="stations.html">Station Information</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-envelope"></i> info@dhakametro.gov.bd</p>
+                <p><i class="fas fa-phone"></i> +880 2 XXXXXXXX</p>
+                <p><i class="fas fa-exclamation-triangle"></i> Emergency: 999</p>
+                <p><i class="fas fa-map-marker-alt"></i> Agargaon, Dhaka-1207</p>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="newsletter">
+                    <h4>Subscribe to Newsletter</h4>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Developed with <span class="heart">❤️</span> by Foysal Zihak |
+                Open Source Project
+                <a href="https://github.com/fzihak/Dhaka-Metro" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="github-icon">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                </a>
+            </p>
+        </div>
+</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
