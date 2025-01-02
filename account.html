@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - Dhaka Metro Rail</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/account.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<nav class="navbar">
+    <div class="nav-brand">
+        <img src="img/logo.png" alt="Metro Logo" class="logo">
+        <span>Dhaka Metro</span>
+    </div>
+    <div class="nav-toggle" id="navToggle">
+        <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="buy-ticket.html">Buy Ticket</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="account.html" class="account-btn">Dashboard</a></li>
+    </ul>
+</nav>
+<body>
+    <main class="account-main">
+        <div class="account-container">
+            <div class="account-sidebar">
+                <div class="user-profile">
+                    <div class="profile-image">
+                        <img src="img/profile.webp" alt="Profile Picture">
+                    </div>
+                    <h3 class="user-name">Foysal Zihak</h3>
+                    <p class="user-email">hello@zihak.me</p>
+                </div>
+                
+                <nav class="account-nav">
+                    <a href="#dashboard" class="active">
+                        <i class="fas fa-home"></i> Dashboard
+                    </a>
+                    <a href="#tickets">
+                        <i class="fas fa-ticket-alt"></i> My Tickets
+                    </a>
+                    <a href="#passes">
+                        <i class="fas fa-id-card"></i> My Passes
+                    </a>
+                    <a href="#history">
+                        <i class="fas fa-history"></i> Travel History
+                    </a>
+                    <a href="#settings">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                </nav>
+            </div>
+
+            <div class="account-content">
+                <!-- Dashboard Section -->
+                <section id="dashboard" class="account-section active">
+                    <h2>Dashboard</h2>
+                    <div class="dashboard-stats">
+                        <div class="stat-card">
+                            <i class="fas fa-ticket-alt"></i>
+                            <div class="stat-info">
+                                <h4>Active Tickets</h4>
+                                <span>2</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-route"></i>
+                            <div class="stat-info">
+                                <h4>Total Trips</h4>
+                                <span>47</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-wallet"></i>
+                            <div class="stat-info">
+                                <h4>Balance</h4>
+                                <span>৳500</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recent-activity">
+                        <h3>Recent Activity</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-train"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <h4>Trip Completed</h4>
+                                    <p>Uttara North to Agargaon</p>
+                                    <span class="activity-time">Today, 10:30 AM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-actions">
+                        <a href="checkout.html" class="btn-buy-ticket">
+                            <i class="fas fa-ticket-alt"></i>
+                            Buy Ticket
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Tickets Section -->
+                <section id="tickets" class="account-section">
+                    <h2>My Tickets</h2>
+                    <div class="tickets-list">
+                        <div class="ticket-card">
+                            <div class="ticket-header">
+                                <h3>Single Journey</h3>
+                                <span class="status active">Active</span>
+                            </div>
+                            <div class="ticket-details">
+                                <div class="ticket-route">
+                                    <div class="station">
+                                        <label>From</label>
+                                        <p>Uttara North</p>
+                                    </div>
+                                    <div class="route-arrow">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </div>
+                                    <div class="station">
+                                        <label>To</label>
+                                        <p>Agargaon</p>
+                                    </div>
+                                </div>
+                                <div class="ticket-info">
+                                    <div class="info-item">
+                                        <label>Date</label>
+                                        <p>Dec 22, 2024</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <label>Time</label>
+                                        <p>10:30 AM</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <label>Fare</label>
+                                        <p>৳60</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- More ticket cards -->
+                    </div>
+                </section>
+
+                <!-- Passes Section -->
+                <section id="passes" class="account-section">
+                    <h2>My Passes</h2>
+                    <div class="passes-list">
+                        <div class="pass-card">
+                            <div class="pass-header">
+                                <h3>Monthly Pass</h3>
+                                <span class="status active">Active</span>
+                            </div>
+                            <div class="pass-details">
+                                <div class="pass-info">
+                                    <div class="info-item">
+                                        <label>Validity</label>
+                                        <p>Dec 2024</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <label>Trips</label>
+                                        <p>Unlimited</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <label>Price</label>
+                                        <p>৳1500</p>
+                                    </div>
+                                </div>
+                                <div class="pass-usage">
+                                    <label>Usage This Month</label>
+                                    <div class="usage-bar">
+                                        <div class="usage-fill" style="width: 65%;"></div>
+                                    </div>
+                                    <p>32 trips taken</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- More pass cards -->
+                    </div>
+                </section>
+
+                <!-- History Section -->
+                <section id="history" class="account-section">
+                    <h2>Travel History</h2>
+                    <div class="history-filters">
+                        <select class="filter-select">
+                            <option value="all">All Time</option>
+                            <option value="month">This Month</option>
+                            <option value="week">This Week</option>
+                        </select>
+                    </div>
+                    <div class="history-list">
+                        <div class="history-item">
+                            <div class="history-date">
+                                <span class="date">Dec 21</span>
+                                <span class="time">10:30 AM</span>
+                            </div>
+                            <div class="history-details">
+                                <div class="journey-route">
+                                    <div class="station">
+                                        <i class="fas fa-circle start"></i>
+                                        <p>Uttara North</p>
+                                    </div>
+                                    <div class="route-line"></div>
+                                    <div class="station">
+                                        <i class="fas fa-circle end"></i>
+                                        <p>Agargaon</p>
+                                    </div>
+                                </div>
+                                <div class="journey-info">
+                                    <span class="fare">৳60</span>
+                                    <span class="type">Single Journey</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- More history items -->
+                    </div>
+                </section>
+
+                <!-- Settings Section -->
+                <section id="settings" class="account-section">
+                    <h2>Settings</h2>
+                    <div class="settings-content">
+                        <div class="settings-card">
+                            <h3>Profile Settings</h3>
+                            <form class="profile-form">
+                                <div class="form-group">
+                                    <label>Full Name</label>
+                                    <input type="text" value="Foysal Zihak">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" value="hello@zihak.me">
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="tel" value="+880 1234567890">
+                                </div>
+                                <button type="submit" class="btn-save">Save Changes</button>
+                            </form>
+                        </div>
+
+                        <div class="settings-card">
+                            <h3>Notification Preferences</h3>
+                            <div class="notification-settings">
+                                <div class="notification-option">
+                                    <span>Email Notifications</span>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="notification-option">
+                                    <span>SMS Notifications</span>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-card">
+                            <h3>Security</h3>
+                            <div class="security-settings">
+                                <button class="btn-change-password">
+                                    <i class="fas fa-key"></i>
+                                    Change Password
+                                </button>
+                                <button class="btn-enable-2fa">
+                                    <i class="fas fa-shield-alt"></i>
+                                    Enable Two-Factor Authentication
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="schedule.html">Train Schedule</a></li>
+                    <li><a href="stations.html">Station Information</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-envelope"></i> info@dhakametro.gov.bd</p>
+                <p><i class="fas fa-phone"></i> +880 2 XXXXXXXX</p>
+                <p><i class="fas fa-exclamation-triangle"></i> Emergency: 999</p>
+                <p><i class="fas fa-map-marker-alt"></i> Agargaon, Dhaka-1207</p>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="newsletter">
+                    <h4>Subscribe to Newsletter</h4>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Developed with <span class="heart">❤️</span> by Foysal Zihak |
+                Open Source Project
+                <a href="https://github.com/fzihak/Dhaka-Metro" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="github-icon">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                </a>
+            </p>
+        </div>
+</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/account.js"></script>
+</body>
+</html>
