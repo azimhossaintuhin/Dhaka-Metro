@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Dhaka Metro Rail</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<nav class="navbar">
+    <div class="nav-brand">
+        <img src="img/logo.png" alt="Metro Logo" class="logo">
+        <span>Dhaka Metro</span>
+    </div>
+    <div class="nav-toggle" id="navToggle">
+        <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="buy-ticket.html">Buy Ticket</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="account.html" class="account-btn">Dashboard</a></li>
+    </ul>
+</nav>
+<body>
+    <main class="checkout-main">
+        <div class="checkout-container">
+            <!-- Progress Bar -->
+            <div class="checkout-progress">
+                <div class="progress-step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Journey Details</div>
+                </div>
+                <div class="progress-step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Select Tickets</div>
+                </div>
+                <div class="progress-step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Payment</div>
+                </div>
+            </div>
+
+            <!-- Checkout Form -->
+            <div class="checkout-form">
+                <!-- Step 1: Journey Details -->
+                <section class="checkout-step active" id="step1">
+                    <h2>Journey Details</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>From Station</label>
+                            <select id="fromStation" required>
+                                <option value="">Select Station</option>
+                                <option value="uttara_north">Uttara North</option>
+                                <option value="uttara_center">Uttara Center</option>
+                                <option value="uttara_south">Uttara South</option>
+                                <option value="pallabi">Pallabi</option>
+                                <option value="mirpur11">Mirpur 11</option>
+                                <option value="mirpur10">Mirpur 10</option>
+                                <option value="kazipara">Kazipara</option>
+                                <option value="shewrapara">Shewrapara</option>
+                                <option value="agargaon">Agargaon</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>To Station</label>
+                            <select id="toStation" required>
+                                <option value="">Select Station</option>
+                                <!-- Options will be populated via JavaScript -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Journey Date</label>
+                            <input type="date" id="journeyDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Journey Type</label>
+                            <select id="journeyType" required>
+                                <option value="single">Single Journey</option>
+                                <option value="return">Return Journey</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn-next">Continue to Select Tickets</button>
+                </section>
+
+                <!-- Step 2: Select Tickets -->
+                <section class="checkout-step" id="step2">
+                    <h2>Select Tickets</h2>
+                    <div class="ticket-options">
+                        <div class="ticket-type">
+                            <div class="ticket-info">
+                                <h3>Adult</h3>
+                                <p>Age 18+</p>
+                                <span class="price">৳60</span>
+                            </div>
+                            <div class="ticket-quantity">
+                                <button class="qty-btn minus" data-type="adult">-</button>
+                                <input type="number" value="1" min="1" max="5" class="qty-input" data-type="adult">
+                                <button class="qty-btn plus" data-type="adult">+</button>
+                            </div>
+                        </div>
+                        <div class="ticket-type">
+                            <div class="ticket-info">
+                                <h3>Child</h3>
+                                <p>Age 3-17</p>
+                                <span class="price">৳30</span>
+                            </div>
+                            <div class="ticket-quantity">
+                                <button class="qty-btn minus" data-type="child">-</button>
+                                <input type="number" value="0" min="0" max="5" class="qty-input" data-type="child">
+                                <button class="qty-btn plus" data-type="child">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fare-summary">
+                        <h3>Fare Summary</h3>
+                        <div class="fare-details">
+                            <div class="fare-item">
+                                <span>Adult Tickets (1)</span>
+                                <span>৳60</span>
+                            </div>
+                            <div class="fare-item">
+                                <span>Child Tickets (0)</span>
+                                <span>৳0</span>
+                            </div>
+                            <div class="fare-item total">
+                                <span>Total Fare</span>
+                                <span>৳60</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-buttons">
+                        <button class="btn-back">Back</button>
+                        <button class="btn-next">Continue to Payment</button>
+                    </div>
+                </section>
+
+                <!-- Step 3: Payment -->
+                <section class="checkout-step" id="step3">
+                    <h2>Payment</h2>
+                    <div class="payment-methods">
+                        <div class="payment-method">
+                            <input type="radio" name="payment" id="bkash" checked>
+                            <label for="bkash">
+                                <img src="img/bkashh.png" alt="bKash" width="110" height="80">
+                                bKash
+                            </label>
+                        </div>
+                        <div class="payment-method">
+                            <input type="radio" name="payment" id="nagad">
+                            <label for="nagad">
+                                <img src="img/nagad-1.webp" alt="Nagad" width="90" height="80">
+                                Nagad
+                            </label>
+                        </div>
+                        <div class="payment-method">
+                            <input type="radio" name="payment" id="card">
+                            <label for="card">
+                                <img src="img/card.png" alt="Card" width="110" height="80">
+                                Credit/Debit Card
+                            </label>
+                        </div>
+                    </div>
+                    <div class="payment-form">
+                        <div class="form-group">
+                            <label>Mobile Number</label>
+                            <input type="tel" placeholder="Enter mobile number" required>
+                        </div>
+                    </div>
+                    <div class="order-summary">
+                        <h3>Order Summary</h3>
+                        <div class="summary-details">
+                            <!-- Will be populated via JavaScript -->
+                        </div>
+                    </div>
+                    <div class="step-buttons">
+                        <button class="btn-back">Back</button>
+                        <button class="btn-confirm">Confirm Payment</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="schedule.html">Train Schedule</a></li>
+                    <li><a href="stations.html">Station Information</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-envelope"></i> info@dhakametro.gov.bd</p>
+                <p><i class="fas fa-phone"></i> +880 2 XXXXXXXX</p>
+                <p><i class="fas fa-exclamation-triangle"></i> Emergency: 999</p>
+                <p><i class="fas fa-map-marker-alt"></i> Agargaon, Dhaka-1207</p>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="newsletter">
+                    <h4>Subscribe to Newsletter</h4>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Developed with <span class="heart">❤️</span> by Foysal Zihak |
+                Open Source Project
+                <a href="https://github.com/fzihak/Dhaka-Metro" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="github-icon">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                </a>
+            </p>
+        </div>
+</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Dhaka Metro Rail</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="img/logo.png" alt="Metro Logo" class="logo">
+            <span>Dhaka Metro</span>
+        </div>
+        <div class="nav-toggle" id="navToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="buy-ticket.html">Buy Ticket</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" class="account-btn">Dashboard</a></li>
+        </ul>
+    </nav>
+
+    <main class="auth-main">
+        <div class="auth-container">
+            <div class="auth-form-container">
+                <h2>Create New Account</h2>
+                <form id="registerForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nid">NID Number</label>
+                        <input type="text" id="nid" name="nid" placeholder="10/13/17 digits" required>
+                        <span class="form-hint">Enter your valid National ID card number</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <div class="input-group">
+                            <span class="prefix">+880</span>
+                            <input type="tel" id="phone" name="phone" placeholder="1XXXXXXXXX" required>
+                        </div>
+                        <span class="form-hint">Enter a valid Bangladeshi phone number</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-group">
+                            <input type="password" id="password" name="password" required>
+                            <button type="button" class="toggle-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="password-suggestions">
+                            <h4 style="font-size: 0.9rem; color: #666; margin: 8px 0;">Password must contain:</h4>
+                            <ul style="font-size: 0.85rem; color: #666; margin: 0; padding-left: 20px;">
+                                <li>At least 8 characters</li>
+                                <li>At least one uppercase letter (A-Z)</li>
+                                <li>At least one lowercase letter (a-z)</li>
+                                <li>At least one number (0-9)</li>
+                                <li>At least one special character (!@#$%^&*)</li>
+                            </ul>
+                            <p style="font-size: 0.85rem; color: #666; margin-top: 8px;">
+                                Example: "Metro2023@" or "Welcome#2024"
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <div class="input-group">
+                            <input type="password" id="confirmPassword" name="confirmPassword" required>
+                            <button type="button" class="toggle-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="terms-checkbox">
+                            <input type="checkbox" name="terms" required>
+                            <span>I agree to the <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a></span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="auth-button">
+                        Create Account
+                        <i class="fas fa-user-plus"></i>
+                    </button>
+                </form>
+
+                <div class="auth-links">
+                    <p>Already have an account? <a href="login.html">Login Here</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="schedule.html">Train Schedule</a></li>
+                    <li><a href="stations.html">Station Information</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-envelope"></i> info@dhakametro.gov.bd</p>
+                <p><i class="fas fa-phone"></i> +880 2 XXXXXXXX</p>
+                <p><i class="fas fa-exclamation-triangle"></i> Emergency: 999</p>
+                <p><i class="fas fa-map-marker-alt"></i> Agargaon, Dhaka-1207</p>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="newsletter">
+                    <h4>Subscribe to Newsletter</h4>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Developed with <span class="heart">❤️</span> by Foysal Zihak |
+                Open Source Project
+                <a href="https://github.com/fzihak/Dhaka-Metro" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="github-icon">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                </a>
+            </p>
+        </div>
+</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
