@@ -95,9 +95,22 @@
 
 .remember-me {
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
 }
+
+input[type="checkbox"] {
+    width: 1rem;
+
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    margin-right: .1rem;
+}
+
 
 .forgot-password {
     color: var(--primary-color);
@@ -161,6 +174,7 @@
 .form-group.error .error-message {
     display: block;
 }
+
 @media (max-width: 768px) {
     .auth-main {
         padding: 1rem;
@@ -170,6 +184,7 @@
         padding: 1.5rem;
     }
 }
+
 .error-message {
     color: #dc3545;
     font-size: 0.85rem;
@@ -187,7 +202,7 @@
     z-index: 1000;
     background-color: #28a745;
     color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .demo-notice {
@@ -195,13 +210,21 @@
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 input.error {
     border-color: #dc3545 !important;
 }
+
 .password-suggestions {
     background: #f8f9fa;
     padding: 10px;

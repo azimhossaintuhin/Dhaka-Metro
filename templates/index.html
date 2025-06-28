@@ -1,22 +1,8 @@
+{% extends "base/base.html" %}
+{% load static %}
 
-<body>
-    <nav class="navbar">
-        <div class="nav-brand">
-            <a href="index.html" target="_blank" title="Dhaka Metro">
-            <img src="img/logo.png" alt="Metro Logo" class="logo"></a>
-            <span>Dhaka Metro</span>
-        </div>
-        <div class="nav-toggle" id="navToggle">
-            <i class="fas fa-bars"></i>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="buy-ticket.html">Buy Ticket</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="login.html" class="account-btn">Dashboard</a></li>
-        </ul>
-    </nav>
-
+{% block content %}
+ 
     <header class="hero">
         <div class="hero-content">
             <div class="hero-text">
@@ -42,7 +28,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="img/Metro-rail.png" alt="Modern Metro Train" class="metro-vector">
+                <img src="{% static 'img/Metro-rail.png' %}" alt="Modern Metro Train" class="metro-vector">
             </div>
         </div>
     </header>
@@ -175,7 +161,7 @@
             <div class="news-grid">
                 <div class="news-card">
                     <div class="news-image">
-                        <img src="img/agargaon-station.jpg" alt="New Station">
+                        <img src="{% static 'img/agargaon-station.jpg' %}" alt="New Station">
                     </div>
                     <div class="news-content">
                         <span class="news-tag">New Station</span>
@@ -186,7 +172,7 @@
                 </div>
                 <div class="news-card">
                     <div class="news-image">
-                        <img src="img/Digital Payment Integration.jpg" alt="Digital Payment">
+                        <img src="{% static 'img/Digital Payment Integration.jpg' %}" alt="Digital Payment">
                     </div>
                     <div class="news-content">
                         <span class="news-tag">Service Update</span>
@@ -197,7 +183,7 @@
                 </div>
                 <div class="news-card">
                     <div class="news-image">
-                        <img src="img/Enhanced Safety Measures.png" alt="Safety Measures">
+                        <img src="{% static 'img/Enhanced Safety Measures.png' %}" alt="Safety Measures">
                     </div>
                     <div class="news-content">
                         <span class="news-tag">Safety</span>
@@ -210,55 +196,6 @@
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="schedule.html">Train Schedule</a></li>
-                    <li><a href="stations.html">Station Information</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Contact Us</h4>
-                <p><i class="fas fa-envelope"></i> info@dhakametro.gov.bd</p>
-                <p><i class="fas fa-phone"></i> +880 2 XXXXXXXX</p>
-                <p><i class="fas fa-exclamation-triangle"></i> Emergency: 999</p>
-                <p><i class="fas fa-map-marker-alt"></i> Agargaon, Dhaka-1207</p>
-            </div>
-            <div class="footer-section">
-                <h4>Connect With Us</h4>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-                <div class="newsletter">
-                    <h4>Subscribe to Newsletter</h4>
-                    <form class="subscribe-form">
-                        <input type="email" placeholder="Your email address">
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>Developed with <span class="heart">❤️</span> by Foysal Zihak |
-                Open Source Project
-                <a href="https://github.com/fzihak/Dhaka-Metro" target="_blank" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="github-icon">
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                    </svg>
-                </a>
-            </p>
-        </div>
-</footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="js/main.js"></script>
-</body>
-</html>
+
+ 
+{%endblock%}
