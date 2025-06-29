@@ -11,7 +11,7 @@
     </div>
     <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="buy-ticket.html">Buy Ticket</a></li>
+        <li><a href="{% url "ticket" %}">Buy Ticket</a></li>
         <li><a href="contact.html">Contact</a></li>
        
         {% if request.user.is_authenticated %}

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}   
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -161,7 +162,7 @@
         <div class="ticket" id="ticket">
             <div class="ticket-header">
                 <div class="logo-section">
-                    <img src="img/logo.png" alt="Metro Logo">
+                    <img src="{% static "img/logo.png"%}" alt="Metro Logo">
                     <div class="title">Dhaka Metro Rail</div>
                 </div>
                 <div class="ticket-id" id="ticketId"></div>

@@ -120,39 +120,19 @@
         <section class="news-updates">
             <h2>Latest Updates</h2>
             <div class="news-grid">
+                {% for update in updates %}
                 <div class="news-card">
                     <div class="news-image">
-                        <img src="{% static 'img/agargaon-station.jpg' %}" alt="New Station">
+                        <img src="{{ update.image.url }}" alt="{{ update.title }} ">
                     </div>
                     <div class="news-content">
-                        <span class="news-tag">New Station</span>
-                        <h3>Agargaon Station Now Open</h3>
-                        <p>The new Agargaon station is now operational, connecting thousands of daily commuters.</p>
-                        <span class="news-date">December 21, 2023</span>
+                        <span class="news-tag">{{ update.category.name }}</span>
+                        <h3>{{ update.title }}</h3>
+                        <p>{{ update.description }}</p>
+                        <span class="news-date">{{ update.created_at|date:"F d, Y" }}</span>
                     </div>
                 </div>
-                <div class="news-card">
-                    <div class="news-image">
-                        <img src="{% static 'img/Digital Payment Integration.jpg' %}" alt="Digital Payment">
-                    </div>
-                    <div class="news-content">
-                        <span class="news-tag">Service Update</span>
-                        <h3>Digital Payment Integration</h3>
-                        <p>Now accepting all major digital payment methods including bKash, Nagad, and credit cards.</p>
-                        <span class="news-date">January 15, 2024</span>
-                    </div>
-                </div>
-                <div class="news-card">
-                    <div class="news-image">
-                        <img src="{% static 'img/Enhanced Safety Measures.png' %}" alt="Safety Measures">
-                    </div>
-                    <div class="news-content">
-                        <span class="news-tag">Safety</span>
-                        <h3>Enhanced Safety Measures</h3>
-                        <p>New safety protocols and sanitization measures implemented across all stations.</p>
-                        <span class="news-date">February 1, 2024</span>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </section>
     </main>

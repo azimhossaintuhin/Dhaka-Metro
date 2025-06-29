@@ -1,15 +1,15 @@
-$(document).ready(function() {
+$(document).ready(function () {
     // Station data with distances (in km) from Uttara North
     const stationData = {
-        'uttara': { name: 'Uttara North', distance: 0 },
-        'uttara-center': { name: 'Uttara Center', distance: 1.2 },
-        'uttara-south': { name: 'Uttara South', distance: 2.4 },
-        'pallabi': { name: 'Pallabi', distance: 4.1 },
-        'mirpur11': { name: 'Mirpur 11', distance: 5.6 },
-        'mirpur10': { name: 'Mirpur 10', distance: 7.2 },
-        'kazipara': { name: 'Kazipara', distance: 8.4 },
-        'shewrapara': { name: 'Shewrapara', distance: 9.6 },
-        'agargaon': { name: 'Agargaon', distance: 11.3 }
+        // 'uttara': { name: 'Uttara North', distance: 0 },
+        // 'uttara-center': { name: 'Uttara Center', distance: 1.2 },
+        // 'uttara-south': { name: 'Uttara South', distance: 2.4 },
+        // 'pallabi': { name: 'Pallabi', distance: 4.1 },
+        // 'mirpur11': { name: 'Mirpur 11', distance: 5.6 },
+        // 'mirpur10': { name: 'Mirpur 10', distance: 7.2 },
+        // 'kazipara': { name: 'Kazipara', distance: 8.4 },
+        // 'shewrapara': { name: 'Shewrapara', distance: 9.6 },
+        // 'agargaon': { name: 'Agargaon', distance: 11.3 }
     };
 
     // Populate station dropdowns
@@ -44,7 +44,7 @@ $(document).ready(function() {
         let serviceCharge = baseFare * 0.05; // 5% service charge
 
         // Adjust fare based on ticket type
-        switch(ticketType) {
+        switch (ticketType) {
             case 'round':
                 baseFare *= 1.9; // 5% discount on return journey
                 break;
@@ -64,17 +64,17 @@ $(document).ready(function() {
     $('input[name="ticketType"]').change(calculateFare);
 
     // Station swap functionality
-    $('#swapStations').click(function() {
+    $('#swapStations').click(function () {
         const fromVal = $('#fromStation').val();
         const toVal = $('#toStation').val();
-        
+
         $('#fromStation').val(toVal);
         $('#toStation').val(fromVal);
         calculateFare();
     });
 
     // Purchase ticket
-    $('#purchaseTicket').click(function() {
+    $('#purchaseTicket').click(function () {
         const fromStation = $('#fromStation').val();
         const toStation = $('#toStation').val();
 
@@ -114,13 +114,14 @@ $(document).ready(function() {
                 </div>
             </div>
         `).appendTo('body');
-        loginPrompt.find('.login-btn').click(function() {
+        loginPrompt.find('.login-btn').click(function () {
             window.location.href = 'login.html';
         });
-        loginPrompt.find('.register-btn').click(function() {
-            window.location.href = 'register.html';});
+        loginPrompt.find('.register-btn').click(function () {
+            window.location.href = 'register.html';
+        });
 
-        loginPrompt.click(function(e) {
+        loginPrompt.click(function (e) {
             if (e.target === this) {
                 loginPrompt.remove();
             }
