@@ -34,58 +34,31 @@
     </header>
 
     <main>
+        <!-- Quick Actions -->
         <section class="quick-actions">
             <div class="action-cards">
+                {% for service in services %}
                 <div class="action-card">
-                    <i class="fas fa-ticket-alt"></i>
-                    <h3>Quick Ticket</h3>
-                    <p>Purchase single journey tickets</p>
-                    <a href="buy-ticket.html" class="card-link">Buy Now</a>
+                    <i class="{{ service.icon_class }}"></i>
+                    <h3>{{ service.title }}</h3>
+                    <p>{{ service.description }}</p>
+                    <a href="{{ service.button_link }}" class="card-link">{{ service.button_text }}</a>
                 </div>
-                <div class="action-card">
-                    <i class="fas fa-route"></i>
-                    <h3>Plan Journey</h3>
-                    <p>Find the best route for your trip</p>
-                    <a href="journey-planner.html" class="card-link">Plan Now</a>
-                </div>
-                <div class="action-card">
-                    <i class="fas fa-credit-card"></i>
-                    <h3>Metro Card</h3>
-                    <p>Get your monthly pass card</p>
-                    <a href="metro-card.html" class="card-link">Learn More</a>
-                </div>
-                <div class="action-card">
-                    <i class="fas fa-clock"></i>
-                    <h3>Live Status</h3>
-                    <p>Check real-time train status</p>
-                    <a href="live-status.html" class="card-link">Check Now</a>
-                </div>
+                {% endfor %}
             </div>
         </section>
 
+        <!-- Features -->
         <section class="features">
             <h2>Why Choose Dhaka Metro?</h2>
             <div class="feature-grid">
+                {% for feature in features %}
                 <div class="feature-card">
-                    <i class="fas fa-clock"></i>
-                    <h3>Time-Saving</h3>
-                    <p>Cut your travel time by up to 70% compared to road transport</p>
+                    <i class="{{ feature.icon_class }}"></i>
+                    <h3>{{ feature.title }}</h3>
+                    <p>{{ feature.description }}</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-leaf"></i>
-                    <h3>Eco-Friendly</h3>
-                    <p>100% electric trains reducing 2.5 million tons of CO2 annually</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-wallet"></i>
-                    <h3>Affordable</h3>
-                    <p>Competitive fares with special discounts for students and seniors</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Safe Travel</h3>
-                    <p>24/7 security with modern surveillance and emergency response</p>
-                </div>
+                {% endfor %}
             </div>
         </section>
 
@@ -99,27 +72,15 @@
                     <div>Status</div>
                     <div>Time</div>
                 </div>
+                {% for train_schedule in train_schedules %}
                 <div class="schedule-row">
-                    <div>MRT-001</div>
-                    <div>Uttara North</div>
-                    <div>Motijheel</div>
+                    <div>{{ train_schedule.train_number }}</div>
+                    <div>{{ train_schedule.from_station }}</div>
+                    <div>{{ train_schedule.to_station }}</div>
                     <div class="status on-time">On Time</div>
-                    <div>10:00 AM</div>
+                    <div>{{ train_schedule.time|date:"H:i" }} AM</div>
                 </div>
-                <div class="schedule-row">
-                    <div>MRT-002</div>
-                    <div>Motijheel</div>
-                    <div>Uttara North</div>
-                    <div class="status delayed">5 min late</div>
-                    <div>10:15 AM</div>
-                </div>
-                <div class="schedule-row">
-                    <div>MRT-003</div>
-                    <div>Uttara North</div>
-                    <div>Motijheel</div>
-                    <div class="status on-time">On Time</div>
-                    <div>10:30 AM</div>
-                </div>
+                {% endfor %}
             </div>
             <a href="schedule.html" class="view-all">View Full Schedule</a>
         </section>

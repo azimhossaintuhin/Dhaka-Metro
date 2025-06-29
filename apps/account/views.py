@@ -38,3 +38,21 @@ class LogoutView(View):
         return redirect("index")
 
 
+class RegisterView(View):
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            return redirect("index")
+        return super().dispatch(request, *args, **kwargs)
+    
+
+
+class ProfileView(View):
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return redirect("login")
+        return super().dispatch(request, *args, **kwargs)
+    
+    def get(self, request):
+        return render(request, "account.html")
+    
+ 

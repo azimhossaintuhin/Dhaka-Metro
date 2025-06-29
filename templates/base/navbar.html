@@ -1,9 +1,10 @@
 {% load static %}
 <nav class="navbar">
     <div class="nav-brand">
-        <a href="index.html" target="_blank" title="Dhaka Metro">
+        <a href="{% url 'index' %}"  title="Dhaka Metro">
         <img src="{% static 'img/logo.png' %}" alt="Metro Logo" class="logo"></a>
         <span>Dhaka Metro</span>
+        
     </div>
     <div class="nav-toggle" id="navToggle">
         <i class="fas fa-bars"></i>
@@ -12,12 +13,23 @@
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="buy-ticket.html">Buy Ticket</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="{% url 'login' %}" class="account-btn">
-            {% if request.user.is_authenticated %}
-                Dashboard
+       
+        {% if request.user.is_authenticated %}
+            {% if request.path == '/account/profile/' %}
+          
+                <li><a href="{% url 'logout' %}" class="account-btn">
+                    Logout
+                </a></li>
             {% else %}
-                Login
+                <li><a href="{% url 'profile' %}" class="account-btn">
+                    Dashboard
+                </a></li>
             {% endif %}
-        </a></li>
+        {% else %}
+            <li><a href="{% url 'login' %}" class="account-btn">
+                Login
+            </a></li>
+        {% endif %}
+        
     </ul>
 </nav>
