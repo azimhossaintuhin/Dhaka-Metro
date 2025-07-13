@@ -1,0 +1,52 @@
+services:
+# Docker Compose configuration for Dhaka Metro project
+  dhaka_metro:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: dhaka_metro
+    image: dhaka_metro:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    networks:
+      - dhaka_metro_network 
+    depends_on:
+      - database
+
+  # Database and pgAdmin services
+  database:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: dhaka_metro_db
+      POSTGRES_USER: dhaka_metro
+      POSTGRES_PASSWORD: dhaka_metro
+    ports:
+      - "5432:5432"
+    restart: always
+    volumes:
+      - db:/var/lib/postgresql/data
+    networks:
+      - dhaka_metro_network
+  
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    networks:
+      - dhaka_metro_network
+    depends_on:
+      - database
+
+networks:
+  dhaka_metro_network:
+    driver: bridge
+
+volumes:
+  db:
+    driver: local
