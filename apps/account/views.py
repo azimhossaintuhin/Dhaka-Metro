@@ -91,13 +91,14 @@ class ProfileView(View):
     
     def post(self, request):
         form = UserProfileForm(request.POST, request.FILES)
-        print(form.errors)
-        print(form.cleaned_data.keys())
-        print(form.cleaned_data.values())
+        
+            
         if form.is_valid():
             user = UserProfile.objects.get(user=request.user)
+        
             for key, value in form.cleaned_data.items():
                 setattr(user, key, value)
+
             user.save()
             return redirect("profile")
         
