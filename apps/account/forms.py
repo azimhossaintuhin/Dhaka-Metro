@@ -1,4 +1,5 @@
 from django import forms
+from .models import UserProfile
 
 
 class LoginForm(forms.Form):
@@ -24,5 +25,12 @@ class RegisterForm(forms.Form):
             raise forms.ValidationError("Passwords do not match.")
         return self.cleaned_data
     
+
+
+class  UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = "__all__"
+        exclude = ["user"]
     
     

@@ -1,12 +1,11 @@
 from typing import Any
-from django.http import HttpRequest
-from django.http.response import HttpResponse as HttpResponse
+from  django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User
 from django.views.generic import View
-from .forms import LoginForm ,RegisterForm
-
+from .forms import LoginForm ,RegisterForm, UserProfileForm
+from .models import UserProfile 
 
 
 class RegisterView(View):
@@ -46,7 +45,7 @@ class RegisterView(View):
 
 
 class LoginView(View):
-    def dispatch(self, request: HttpRequest, *args: Any, **kwargs: Any) -> HttpResponse:
+    def dispatch(self, request, *args: Any, **kwargs: Any):
         if request.user.is_authenticated:
             return redirect("index")
         return super().dispatch(request, *args, **kwargs)
@@ -67,7 +66,10 @@ class LoginView(View):
                 return render(request, "login.html", {"form": form})
         else:
             return render(request, "login.html", {"form": form})
-
+    
+    
+   
+        
 
 class LogoutView(View):
     def get(self, request):
@@ -87,5 +89,32 @@ class ProfileView(View):
     def get(self, request):
         return render(request, "account.html")
     
+    def post(self, request):
+        form = UserProfileForm(request.POST, request.FILES)
+        print(form.errors)
+        print(form.cleaned_data.keys())
+        print(form.cleaned_data.values())
+        if form.is_valid():
+            user = UserProfile.objects.get(user=request.user)
+            for key, value in form.cleaned_data.items():
+                setattr(user, key, value)
+            user.save()
+            return redirect("profile")
+        
+        else:
+            print(form.errors)
+            return render(request, "account.html", {"form": form})
  
- 
+class ProfileImageUpdateView(View):
+    def post(self, request):
+        try:
+            user = UserProfile.objects.get(user=request.user)
+            user.iamge = request.FILES["iamge"]
+            user.save()
+            return JsonResponse({"message": "Image updated successfully","status":200})
+        except UserProfile.DoesNotExist:
+            return JsonResponse({"message": "User not found","status":404})
+        except Exception as e:
+            return JsonResponse({"message": "Image updated failed","status":400})
+
+    

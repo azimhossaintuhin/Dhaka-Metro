@@ -13,6 +13,7 @@ class UserProfile(models.Model):
     full_name = models.CharField(max_length=255)
     nid_number =  models.CharField(max_length=17, null=True, blank=True)
     iamge =  models.ImageField(upload_to='profile_images/', null=True, blank=True , validators=[extension_validator])
+    phone_number = models.CharField(max_length=110, null=True, blank=True)
     is_validated = models.BooleanField(default=False)
     
     def __str__(self):

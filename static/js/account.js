@@ -44,11 +44,11 @@ $(document).ready(function() {
 
     // Update dashboard with user data
     function updateDashboard(userData) {
-        $('.user-name').text(userData.name);
-        $('.user-email').text(userData.email);
+        // $('.user-name').text(userData.name);
+        // $('.user-email').text(userData.email);
         
-        // Update stats
-        updateStats(userData);
+        // // Update stats
+        // updateStats(userData);
         
         // Update activity list
         updateActivityList(userData.recentActivity);
@@ -98,9 +98,27 @@ $(document).ready(function() {
                 const reader = new FileReader();
                 reader.onload = function(event) {
                     $('.profile-image img').attr('src', event.target.result);
+                 
                     // Here you would typically upload the image to your server
                 };
+                const formData = new FormData();
+                formData.append("iamge", e.target.files[0]);
                 reader.readAsDataURL(e.target.files[0]);
+                console.log(e.target.files[0]);
+                fetch("/account/profile/image/", {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "X-CSRFToken": $('meta[name=csrf-token]').attr('content')
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);  
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                });
             }
         });
     });
